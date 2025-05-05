@@ -29,5 +29,10 @@ module.exports = {
 
         if (builders.length < 1)
             this.create(Roles.Builder);
+
+        var upgrader = _.filter(Game.creeps, (creep) => creep.memory.role == Roles.Upgrader);
+
+        if (upgrader.length < 1)
+            this.create(Roles.Upgrader);           
     }
 };
