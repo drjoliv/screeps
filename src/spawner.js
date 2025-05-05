@@ -28,6 +28,6 @@ module.exports = {
         var builders = _.filter(Game.creeps, (creep) => creep.memory.role == Roles.Builder);
 
         if (builders.length < 1)
-            this.create(Roles.Harvester);
+            this.create(Roles.Builder);
     }
 };
