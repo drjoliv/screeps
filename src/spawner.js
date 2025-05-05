@@ -23,7 +23,9 @@ const Skills = {
 };
 
 const Loads = {
-    [Roles.Harvester]: [Skills.Work, Skills.Carry, Skills.Move]
+    [Roles.Harvester]: [Skills.Work, Skills.Carry, Skills.Move],
+    [Roles.Upgrader]: [Skills.Work, Skills.Carry, Skills.Move],
+    [Roles.Builder]: [Skills.Work, Skills.Carry, Skills.Move]
 }
 
 module.exports = {
