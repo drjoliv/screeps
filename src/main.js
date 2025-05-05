@@ -27,11 +27,7 @@ module.exports.loop = function () {
         }
     }
 
-    var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
-    console.log('Harvesters: ' + harvesters.length);
-
-    if (harvesters.length < 2)
-        spawner.create(spawner.Roles.Harvester);
+    spawner.run();
 
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
