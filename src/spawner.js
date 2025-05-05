@@ -25,14 +25,14 @@ module.exports = {
         if (harvesters.length < 2)
             this.create(Roles.Harvester);
 
+        var upgrader = _.filter(Game.creeps, (creep) => creep.memory.role == Roles.Upgrader);
+
+        if (upgrader.length < 2)
+            this.create(Roles.Upgrader);
+
         var builders = _.filter(Game.creeps, (creep) => creep.memory.role == Roles.Builder);
 
         if (builders.length < 1)
             this.create(Roles.Builder);
-
-        var upgrader = _.filter(Game.creeps, (creep) => creep.memory.role == Roles.Upgrader);
-
-        if (upgrader.length < 1)
-            this.create(Roles.Upgrader);           
     }
 };
