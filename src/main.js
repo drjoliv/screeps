@@ -4,6 +4,13 @@ var roleBuilder = require('role.builder');
 
 module.exports.loop = function () {
 
+    for(var name in Memory.creeps) {
+        if(!Game.creeps[name]) {
+            delete Memory.creeps[name];
+            console.log('Clearing non-existing creep memory:', name);
+        }
+    }
+
     var tower = Game.getObjectById('9dcf002c9a2400c65460060b');
     if(tower) {
         var closestDamagedStructure = tower.pos.findClosestByRange(FIND_STRUCTURES, {
