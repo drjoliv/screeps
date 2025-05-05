@@ -50,7 +50,7 @@ module.exports = {
     run: function () {
         var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == Roles.Harvester);
 
-        if (harvesters.length < 5)
+        if (harvesters.length < 2)
             this.create(Roles.Harvester);
 
         var upgrader = _.filter(Game.creeps, (creep) => creep.memory.role == Roles.Upgrader);
