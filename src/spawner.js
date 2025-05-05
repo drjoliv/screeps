@@ -1,12 +1,38 @@
 const Roles = {
     Harvester: 'harvester',
     Upgrader: 'upgrader',
-    Builder: 'builder'
+    Builder: 'builder',
+    Repair: 'repair',
+    Guard: 'guard',
+    Attacker: 'attacker',
+    Claimer: 'claimer',
+    Pioneer: 'pioneer',
+    Transport: 'transport',
+    Miner: 'miner',
+};
+
+const Skills = {
+    Work: 'work',
+    Move: 'move',
+    Carry: 'carry',
+    Attack: 'attack',
+    RangedAttack: 'ranged_attack',
+    Heal: 'heal',
+    Claim: 'claim',
+    Tough: 'tough',
+};
+
+const Loads = {
+    [Roles.Harvester]: [Skills.Work, Skills.Carry, Skills.Move]
 }
 
 module.exports = {
 
     Roles,
+
+    Skills,
+
+    Loads,
 
     /** @param {string} Creep **/
     create: function (type) {
@@ -16,7 +42,7 @@ module.exports = {
             }
         };
 
-        Game.spawns['Main'].spawnCreep([WORK, CARRY, MOVE], Game.time, memory);
+        Game.spawns['Main'].spawnCreep(this.Loads[type], Game.time, memory);
     },
 
     run: function () {
